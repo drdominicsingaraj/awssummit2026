@@ -1,0 +1,196 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Multi-environment CloudFormation template for S3 static website hosting with flexible parameterization and environment-specific tagging'
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: 'Name of the S3 bucket to create for website hosting. Must be globally unique across all AWS accounts.'
+    AllowedPattern: '^[a-z0-9][a-z0-9-]*[a-z0-9]$|^[a-z0-9]$'
+    ConstraintDescription: 'Bucket name must be 3-63 characters, start and end with lowercase letter or number, and contain only lowercase letters, numbers, and hyphens. No uppercase letters, underscores, or periods allowed.'
+    MinLength: 3
+    MaxLength: 63
+  
+  Environment:
+    Type: String
+    Description: 'Environment name for resource tagging and identification (e.g., dev, staging, prod)'
+    Default: 'dev'
+    AllowedValues:
+      - dev
+      - test
+      - staging
+      - prod
+      - demo
+    ConstraintDescription: 'Environment must be one of: dev, test, staging, prod, demo'
+  
+  ProjectName:
+    Type: String
+    Description: 'Project name for resource tagging and organization'
+    Default: 'static-website'
+    AllowedPattern: '^[a-zA-Z0-9][a-zA-Z0-9-_]*[a-zA-Z0-9]$|^[a-zA-Z0-9]$'
+    ConstraintDescription: 'Project name must contain only alphanumeric characters, hyphens, and underscores'
+    MinLength: 1
+    MaxLength: 50
+  
+  IndexDocument:
+    Type: String
+    Default: 'index.html'
+    Description: 'Name of the index document for the website (default: index.html)'
+    AllowedPattern: '^[a-zA-Z0-9._-]+\.(html|htm)$'
+    ConstraintDescription: 'Index document must be a valid HTML file name with .html or .htm extension'
+  
+  ErrorDocument:
+    Type: String
+    Default: 'error.html'
+    Description: 'Name of the error document for the website (default: error.html)'
+    AllowedPattern: '^[a-zA-Z0-9._-]+\.(html|htm)$'
+    ConstraintDescription: 'Error document must be a valid HTML file name with .html or .htm extension'
+  
+  EnableVersioning:
+    Type: String
+    Description: 'Enable S3 bucket versioning for better content management'
+    Default: 'false'
+    AllowedValues:
+      - 'true'
+      - 'false'
+    ConstraintDescription: 'Must be either true or false'
+  
+  CostCenter:
+    Type: String
+    Description: 'Cost center for billing and resource allocation tracking (optional)'
+    Default: ''
+    MaxLength: 50
+
+Conditions:
+  HasCostCenter: !Not [!Equals [!Ref CostCenter, '']]
+  EnableVersioningCondition: !Equals [!Ref EnableVersioning, 'true']
+
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: "S3 Bucket Configuration"
+        Parameters:
+          - BucketName
+          - EnableVersioning
+      - Label:
+          default: "Website Configuration"
+        Parameters:
+          - IndexDocument
+          - ErrorDocument
+      - Label:
+          default: "Environment and Tagging"
+        Parameters:
+          - Environment
+          - ProjectName
+          - CostCenter
+    ParameterLabels:
+      BucketName:
+        default: "S3 Bucket Name"
+      Environment:
+        default: "Environment"
+      ProjectName:
+        default: "Project Name"
+      IndexDocument:
+        default: "Index Document"
+      ErrorDocument:
+        default: "Error Document"
+      EnableVersioning:
+        default: "Enable Versioning"
+      CostCenter:
+        default: "Cost Center (Optional)"
+
+Resources:
+  # Create S3 bucket with website hosting configuration
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      WebsiteConfiguration:
+        IndexDocument: !Ref IndexDocument
+        ErrorDocument: !Ref ErrorDocument
+      VersioningConfiguration:
+        Status: !If [EnableVersioningCondition, 'Enabled', 'Suspended']
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Project
+          Value: !Ref ProjectName
+        - Key: Purpose
+          Value: 'Static Website Hosting'
+        - Key: ManagedBy
+          Value: 'CloudFormation'
+        - Key: StackName
+          Value: !Ref AWS::StackName
+        - !If
+          - HasCostCenter
+          - Key: CostCenter
+            Value: !Ref CostCenter
+          - !Ref AWS::NoValue
+
+  # Apply bucket policy for public read access
+  S3BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref S3Bucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: PublicReadGetObject
+            Effect: Allow
+            Principal: '*'
+            Action: 's3:GetObject'
+            Resource: !Sub '${S3Bucket}/*'
+
+Outputs:
+  WebsiteURL:
+    Description: 'Complete S3 website endpoint URL for accessing the static website'
+    Value: !GetAtt S3Bucket.WebsiteURL
+    Export:
+      Name: !Sub '${AWS::StackName}-WebsiteURL'
+  
+  BucketWebsiteConfiguration:
+    Description: 'S3 bucket website configuration status and details'
+    Value: !Sub 'Website hosting enabled for bucket ${S3Bucket} with index document ${IndexDocument} and error document ${ErrorDocument}'
+    Export:
+      Name: !Sub '${AWS::StackName}-BucketWebsiteConfiguration'
+  
+  BucketName:
+    Description: 'Name of the S3 bucket configured for website hosting'
+    Value: !Ref S3Bucket
+    Export:
+      Name: !Sub '${AWS::StackName}-BucketName'
+  
+  Environment:
+    Description: 'Environment where the website is deployed'
+    Value: !Ref Environment
+    Export:
+      Name: !Sub '${AWS::StackName}-Environment'
+  
+  ProjectName:
+    Description: 'Project name associated with this website'
+    Value: !Ref ProjectName
+    Export:
+      Name: !Sub '${AWS::StackName}-ProjectName'
+  
+  BucketDomainName:
+    Description: 'Domain name of the S3 bucket for CNAME configuration'
+    Value: !GetAtt S3Bucket.DomainName
+    Export:
+      Name: !Sub '${AWS::StackName}-BucketDomainName'
+  
+  BucketRegionalDomainName:
+    Description: 'Regional domain name of the S3 bucket'
+    Value: !GetAtt S3Bucket.RegionalDomainName
+    Export:
+      Name: !Sub '${AWS::StackName}-BucketRegionalDomainName'
+  
+  VersioningStatus:
+    Description: 'S3 bucket versioning status'
+    Value: !If [EnableVersioningCondition, 'Enabled', 'Suspended']
+    Export:
+      Name: !Sub '${AWS::StackName}-VersioningStatus'
