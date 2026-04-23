@@ -2,97 +2,102 @@
 
 ## 🎯 Workshop Title
 
-**"AI-Powered Infrastructure as Code: Building Enterprise S3 Websites with Kiro & CloudFormation"**
+**"Specs-Driven Infrastructure as Code: Building Enterprise S3 Websites with Kiro AI & CloudFormation"**
 
-*Discover How Kiro AI Accelerates CloudFormation Development, Testing, and Multi-Environment Deployments*
+*Discover How Kiro AI Transforms Requirements into Production-Ready Infrastructure Through Specs-Based Development*
 
 ---
 
 ## 📝 Workshop Description
 
 ### Overview
-Join Dr. Dominic Singaraj, Principal Cloud Development Coach and AWS Advocate, for an exclusive 60-minute demonstration of how Kiro AI revolutionizes Infrastructure as Code development. Witness firsthand how AI-powered development accelerates CloudFormation template creation, automates testing frameworks, and streamlines multi-environment deployments for production-ready S3 static websites.
+Join Dr. Dominic Singaraj, Principal Cloud Development Coach and AWS Advocate, for an exclusive 60-minute demonstration of how Kiro AI revolutionizes Infrastructure as Code through specs-based development. Witness firsthand how AI transforms structured requirements and design specifications into production-ready CloudFormation templates, automated testing frameworks, and multi-environment deployments for S3 static websites.
 
 ### What You'll Experience
-In this workshop, you'll witness Kiro AI create a complete CloudFormation solution that:
-- **Generates production-ready S3 static websites** with automated infrastructure provisioning using AI-powered code generation
-- **Implements enterprise security patterns** with AI-assisted policy creation and least-privilege access configuration
-- **Supports multiple environments** (dev, staging, prod) through intelligent parameterization and environment-specific configurations
-- **Includes comprehensive validation** with AI-generated testing frameworks and automated deployment verification
-- **Features professional content** showcasing how AI accelerates cloud architecture development
+In this workshop, you'll witness Kiro AI's specs-based development methodology create a complete CloudFormation solution that:
+- **Transforms requirements into infrastructure** using AI-powered specs-to-code generation from structured requirements documents
+- **Generates production-ready S3 static websites** with automated infrastructure provisioning based on design specifications
+- **Implements enterprise security patterns** through AI analysis of security requirements and automated policy generation
+- **Supports multiple environments** (dev, staging, prod) via intelligent interpretation of deployment specifications
+- **Includes comprehensive validation** with AI-generated testing frameworks derived from acceptance criteria
+- **Features professional content** showcasing how specs-driven development accelerates cloud architecture
 
 ### Key Learning Outcomes
-In this focused 60-minute session, you will:
+By the end of this workshop, you will:
 
-🤖 **Discover Kiro AI's CloudFormation Capabilities**
-- See how AI generates production-grade CloudFormation templates with proper parameterization
-- Witness intelligent code completion and template optimization in real-time
-- Learn how AI accelerates infrastructure development by 10x
+🏗️ **Master CloudFormation Fundamentals**
+- Write production-grade CloudFormation templates with proper parameterization
+- Implement conditional logic and resource dependencies
+- Create reusable templates for multiple deployment scenarios
 
-🔒 **Experience AI-Powered Security Implementation**
-- Watch Kiro automatically configure S3 bucket policies with least-privilege principles
-- See AI-assisted security validation and compliance checking
-- Observe intelligent resource tagging and access control generation
+🔒 **Implement Security Best Practices**
+- Configure S3 bucket policies with least-privilege principles
+- Set up proper public access configurations for website hosting
+- Implement resource tagging for compliance and cost management
 
-🚀 **Witness Multi-Environment Automation**
-- Experience AI-driven deployment to dev, staging, and production environments
-- See how Kiro manages environment-specific configurations intelligently
-- Learn about AI-powered deployment strategy optimization
+🚀 **Build Multi-Environment Pipelines**
+- Deploy to dev, staging, and production environments
+- Manage environment-specific configurations and parameters
+- Implement proper resource naming and tagging strategies
 
-🧪 **Explore AI-Generated Testing Frameworks**
-- Watch Kiro create comprehensive validation and testing suites automatically
-- See AI-powered deployment verification and monitoring setup
-- Experience intelligent troubleshooting and error resolution
+🧪 **Create Comprehensive Testing Frameworks**
+- Validate CloudFormation template syntax and structure
+- Implement functional testing for deployed resources
+- Build automated deployment verification scripts
+
+💼 **Apply Enterprise Patterns**
+- Structure projects for team collaboration and maintenance
+- Implement proper documentation and specification practices
+- Create deployment automation and monitoring solutions
 
 ### Workshop Agenda (60 Minutes)
 
-**Part 1: Kiro AI Introduction & Setup (10 minutes)**
-- Introduction to Kiro AI and its CloudFormation capabilities
-- AI-powered development environment setup
-- Overview of intelligent infrastructure automation
+**Part 1: Foundation & Setup (10 minutes)**
+- CloudFormation essentials and S3 static website hosting
+- Security best practices overview
+- Workshop environment setup
 
-**Part 2: Live AI-Powered Implementation (25 minutes)**
-- Watch Kiro AI generate production-ready CloudFormation templates in real-time
-- Experience AI-assisted multi-environment parameterization
-- See intelligent security policy and resource configuration generation
+**Part 2: Live Implementation (25 minutes)**
+- Building the production-ready CloudFormation template
+- Implementing multi-environment parameterization
+- Adding security policies and resource configurations
 
-**Part 3: AI-Driven Deployment & Testing (15 minutes)**
-- Live demonstration of AI-powered deployment automation
-- Witness intelligent multi-environment deployment strategies
-- Experience AI-generated validation and testing frameworks
+**Part 3: Deployment & Testing (15 minutes)**
+- Live deployment demonstration
+- Multi-environment deployment strategies
+- Automated validation and testing overview
 
-**Part 4: Kiro AI Best Practices & Future (10 minutes)**
-- AI-powered enterprise patterns and intelligent troubleshooting
-- Scaling strategies with AI assistance
-- Future of AI in Infrastructure as Code development
+**Part 4: Production Patterns & Takeaways (10 minutes)**
+- Enterprise best practices and troubleshooting
+- Scaling strategies and next steps
+- Community resources and continued learning
 
 ### Prerequisites
 - Basic AWS knowledge (S3, IAM, CloudFormation concepts)
-- Interest in AI-powered development tools
-- Curiosity about how AI can accelerate infrastructure development
-- No prior Kiro AI experience required
+- AWS CLI installed and configured
+- Text editor or IDE
+- Active AWS account with appropriate permissions
 
 ### What You'll Take Away
-- **Live demonstration** of Kiro AI's CloudFormation generation capabilities
-- **Production-ready CloudFormation template** created by AI in real-time
-- **AI-generated testing and validation framework** with automation scripts
-- **Understanding** of how AI transforms infrastructure development workflows
-- **Insights** into the future of AI-powered DevOps and cloud engineering
+- **Complete CloudFormation solution** ready for production use
+- **Comprehensive testing framework** with validation scripts
+- **Multi-environment deployment strategy** with automation
+- **Professional documentation templates** and best practices
+- **Real-world project** showcasing enterprise-grade infrastructure
 
 ### Target Audience
-- **Cloud Engineers** curious about AI-powered infrastructure development
-- **DevOps Professionals** exploring AI automation in CI/CD pipelines
-- **Solutions Architects** interested in AI-assisted cloud solution design
-- **Developers** wanting to understand AI's impact on infrastructure
-- **IT Leaders** evaluating AI tools for their development teams
+- **Cloud Engineers** looking to master Infrastructure as Code
+- **DevOps Professionals** implementing CI/CD pipelines
+- **Solutions Architects** designing scalable cloud solutions
+- **Developers** wanting to understand cloud infrastructure
+- **IT Professionals** transitioning to cloud-native approaches
 
 ### Workshop Highlights
-✨ **AI-Powered Live Demo**: Watch Kiro AI generate enterprise infrastructure in real-time
-✨ **Revolutionary Technology**: Experience the future of Infrastructure as Code development
-✨ **Production-Ready Output**: See AI create immediately deployable CloudFormation templates
-✨ **Expert AI Insights**: Learn from an AWS Advocate pioneering AI-powered development
-✨ **Practical AI Applications**: Discover how AI transforms real-world cloud engineering
-✨ **Exclusive Access**: Get early insights into cutting-edge AI development tools
+✨ **Hands-On Learning**: Build real infrastructure you can use immediately
+✨ **Production-Ready Code**: Enterprise-grade templates with comprehensive testing
+✨ **Expert Guidance**: Learn from an AWS Advocate with 20+ years of experience
+✨ **Practical Examples**: Real-world scenarios and troubleshooting
+✨ **Community Access**: Join the AWS One Stop Shop Community for ongoing support
 
 ---
 
@@ -105,50 +110,52 @@ Dr. Dominic Singaraj brings over two decades of global experience in cloud archi
 
 **Credentials & Experience:**
 - 🎓 MIT Executive Program: Artificial Intelligence – Business Strategy Graduate
-- 🏢 Head of Infra & Cyber @ neuefische GmbH
-- 🌟 AWS re/Start Instructor
+- 🏢 Principal Cloud Development Coach at Neuefische GmbH
+- 🌟 AWS re/Start Program Leader
 - 🌍 Global experience across US, Germany, UK, India, and beyond
+- 📚 Regular participant at World AI Cannes Festival
 - 💡 20+ years in software development and cloud architecture
 
 **Expertise Areas:**
 - AWS CloudFormation and Infrastructure as Code
-- AI-powered development tools and workflows
 - Multi-cloud architecture and migration strategies
-- AI integration in cloud workflows and DevOps automation
-- Cloud cost optimization and intelligent governance
+- AI integration in cloud workflows
+- DevOps and automation best practices
+- Cloud cost optimization and governance
 
 ---
 
 ## 📋 Workshop Materials
 
 ### Repository Access
-- **GitHub Repository**: Complete CloudFormation solution generated by Kiro AI
-- **AI-Generated Documentation**: Comprehensive deployment guides created by Kiro
+- **GitHub Repository**: Complete CloudFormation solution with testing framework
+- **Documentation**: Comprehensive deployment guides and troubleshooting
 - **Sample Content**: Professional portfolio website template
-- **AI Testing Scripts**: Automated validation and verification tools created by Kiro AI
+- **Testing Scripts**: Automated validation and verification tools
 
-### AI-Powered Resources
-- **Kiro-Generated Templates**: Production-ready infrastructure code created by AI
-- **Intelligent Deployment Scripts**: AI-optimized deployment and management automation
-- **AI Validation Framework**: Comprehensive testing and verification suite
-- **Smart Multi-Environment Configs**: AI-optimized dev, staging, and production examples
+### Hands-On Resources
+- **CloudFormation Templates**: Production-ready infrastructure code
+- **Deployment Scripts**: Automated deployment and management tools
+- **Validation Framework**: Comprehensive testing and verification suite
+- **Multi-Environment Configs**: Dev, staging, and production examples
 
 ---
 
 ## 🎯 Call to Action
 
-**Ready to witness the future of Infrastructure as Code with Kiro AI?**
+**Ready to master CloudFormation and build production-ready infrastructure?**
 
-Join this exclusive workshop and discover how AI revolutionizes cloud engineering. Experience firsthand how Kiro AI accelerates development, automates complex tasks, and generates production-ready infrastructure in minutes, not hours.
+Join this intensive workshop and transform your cloud engineering skills. Learn from an AWS expert, build real infrastructure, and take home a complete solution you can use immediately in your projects.
 
 **Workshop Benefits:**
-- 🤖 Experience cutting-edge AI-powered development tools
-- 🚀 Accelerate your cloud career with AI-enhanced skills
-- 💼 Witness AI create enterprise-grade infrastructure in real-time
-- � Gain insights into the future of AI-powered DevOps
-- 📈 Learn how AI transforms development productivity
-- 🏆 Get early access to revolutionary development technology
+- 🚀 Accelerate your cloud career with enterprise-grade skills
+- 💼 Build a portfolio project showcasing your infrastructure expertise
+- 🤝 Connect with the AWS One Stop Shop Community
+- 📈 Gain practical experience with production-ready solutions
+- 🏆 Earn recognition as a CloudFormation expert
+
+**Limited Seats Available - Register Now!**
 
 ---
 
-*"Empowering the next generation of cloud professionals through AI-powered development and real-world expertise."* - Dr. Dominic Singaraj
+*"Empowering the next generation of cloud professionals through hands-on education and real-world expertise."* - Dr. Dominic Singaraj
