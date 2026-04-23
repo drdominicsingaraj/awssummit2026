@@ -2,30 +2,31 @@
 
 ## Introduction
 
-This feature enables hosting a static website using HTML files from an existing S3 bucket "nfspdominicdemo" with CloudFormation infrastructure as code for reusability and maintainability. The solution provides public web access to static content while following AWS best practices for infrastructure deployment.
+This feature enables hosting a static website using manually created HTML files with CloudFormation infrastructure as code for reusability and maintainability. The solution provides public web access to static content while following AWS best practices for infrastructure deployment. The website content includes a professional profile for Dr. Dominic Singaraj with custom index.html and Error.html files.
 
 ## Glossary
 
 - **Static_Website_System**: The complete infrastructure solution including S3 bucket configuration, CloudFormation template, and public access controls
 - **CloudFormation_Template**: AWS infrastructure as code template that defines and provisions AWS resources
-- **S3_Bucket**: Amazon Simple Storage Service bucket "nfspdominicdemo" containing HTML files
+- **S3_Bucket**: Amazon Simple Storage Service bucket containing manually created HTML files
 - **Public_Access**: Web accessibility without authentication requirements
-- **HTML_Files**: Static web content files stored in the S3 bucket
+- **HTML_Files**: Manually created static web content files (index.html and Error.html) for Dr. Dominic Singaraj's professional profile
 - **Website_Endpoint**: The publicly accessible URL for the static website
+- **Manual_Content**: Custom HTML files created by the user containing professional profile information
 
 ## Requirements
 
-### Requirement 1: S3 Static Website Hosting
+### Requirement 1: S3 Static Website Hosting with Manual Content
 
-**User Story:** As a website owner, I want to host static HTML files from my S3 bucket as a public website, so that users can access my content through a web browser.
+**User Story:** As a website owner, I want to host manually created static HTML files on S3 as a public website, so that users can access my professional profile content through a web browser.
 
 #### Acceptance Criteria
 
-1. THE Static_Website_System SHALL configure the S3_Bucket "nfspdominicdemo" for static website hosting
-2. WHEN a user requests the Website_Endpoint, THE Static_Website_System SHALL serve HTML_Files from the S3_Bucket
-3. THE Static_Website_System SHALL set "index.html" as the default document for the website root
-4. WHEN a user requests a non-existent page, THE Static_Website_System SHALL serve a custom error page
-5. THE Static_Website_System SHALL enable Public_Access to all website content
+1. THE Static_Website_System SHALL configure the S3_Bucket for static website hosting
+2. WHEN a user requests the Website_Endpoint, THE Static_Website_System SHALL serve the manually created HTML_Files from the S3_Bucket
+3. THE Static_Website_System SHALL set the manually created "index.html" as the default document for the website root
+4. WHEN a user requests a non-existent page, THE Static_Website_System SHALL serve the manually created custom "Error.html" page
+5. THE Static_Website_System SHALL enable Public_Access to all manually uploaded website content
 
 ### Requirement 2: CloudFormation Infrastructure Template
 
@@ -77,12 +78,24 @@ This feature enables hosting a static website using HTML files from an existing 
 
 ### Requirement 6: Deployment Validation and Outputs
 
-**User Story:** As a deployment engineer, I want clear outputs and validation from the CloudFormation deployment, so that I can verify the website is working correctly.
+**User Story:** As a deployment engineer, I want clear outputs and validation from the CloudFormation deployment, so that I can verify the website is working correctly with my manually created content.
 
 #### Acceptance Criteria
 
-1. THE CloudFormation_Template SHALL output the complete Website_Endpoint URL
+1. THE CloudFormation_Template SHALL output the complete Website_Endpoint URL for accessing manually created content
 2. THE CloudFormation_Template SHALL output the S3_Bucket website configuration status
-3. WHEN deployment completes successfully, THE Static_Website_System SHALL be immediately accessible
-4. THE CloudFormation_Template SHALL validate that the specified S3_Bucket exists before configuration
-5. IF the S3_Bucket does not exist, THEN THE CloudFormation_Template SHALL fail with a descriptive error message
+3. WHEN deployment completes successfully, THE Static_Website_System SHALL be immediately accessible with Manual_Content
+4. THE CloudFormation_Template SHALL create new S3_Bucket if it doesn't exist to host Manual_Content
+5. THE Static_Website_System SHALL be ready to serve manually uploaded HTML_Files immediately after deployment
+
+### Requirement 7: Manual Content Integration
+
+**User Story:** As a content creator, I want to manually create and upload custom HTML files for my professional website, so that I have full control over the content and design.
+
+#### Acceptance Criteria
+
+1. THE Static_Website_System SHALL support manually created index.html files containing professional profile information
+2. THE Static_Website_System SHALL support manually created Error.html files for custom error handling
+3. WHEN Manual_Content is uploaded to the S3_Bucket, THE Static_Website_System SHALL serve the content with proper MIME types
+4. THE Static_Website_System SHALL preserve the styling and formatting of manually created HTML_Files
+5. THE CloudFormation_Template SHALL work with any manually created HTML content without requiring template modifications
