@@ -1,0 +1,46 @@
+{
+    "Parameters": [
+        {
+            "ParameterKey": "IndexDocument",
+            "DefaultValue": "index.html",
+            "NoEcho": false,
+            "Description": "Name of the index document for the website (default: index.html)"
+        },
+        {
+            "ParameterKey": "BucketName",
+            "NoEcho": false,
+            "Description": "Name of the S3 bucket to create for website hosting. Must be globally unique across all AWS accounts."
+        },
+        {
+            "ParameterKey": "CostCenter",
+            "DefaultValue": "",
+            "NoEcho": false,
+            "Description": "Cost center for billing and resource allocation tracking (optional)"
+        },
+        {
+            "ParameterKey": "ProjectName",
+            "DefaultValue": "static-website",
+            "NoEcho": false,
+            "Description": "Project name for resource tagging and organization"
+        },
+        {
+            "ParameterKey": "Environment",
+            "DefaultValue": "dev",
+            "NoEcho": false,
+            "Description": "Environment name for resource tagging and identification (e.g., dev, staging, prod)"
+        },
+        {
+            "ParameterKey": "EnableVersioning",
+            "DefaultValue": "false",
+            "NoEcho": false,
+            "Description": "Enable S3 bucket versioning for better content management"
+        },
+        {
+            "ParameterKey": "ErrorDocument",
+            "DefaultValue": "error.html",
+            "NoEcho": false,
+            "Description": "Name of the error document for the website (default: error.html)"
+        }
+    ],
+    "Description": "Multi-environment CloudFormation template for S3 static website hosting with flexible parameterization and environment-specific tagging"
+}

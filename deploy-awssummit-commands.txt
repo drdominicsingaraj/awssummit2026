@@ -1,0 +1,35 @@
+AWS Summit Hamburg - S3 Static Website Deployment Commands
+========================================================
+
+Bucket Name: nfspdominicawssummit-website
+Region: eu-central-1
+Stack Name: nfspdominicawssummit-website-stack
+
+Step 1: Validate Template
+-------------------------
+aws cloudformation validate-template --template-body file://s3-static-website.yaml --region eu-central-1
+
+Step 2: Deploy Stack
+-------------------
+aws cloudformation create-stack --stack-name nfspdominicawssummit-website-stack --template-body file://s3-static-website.yaml --parameters ParameterKey=BucketName,ParameterValue=nfspdominicawssummit-website --region eu-central-1
+
+Step 3: Monitor Deployment
+-------------------------
+aws cloudformation describe-stacks --stack-name nfspdominicawssummit-website-stack --region eu-central-1
+
+Step 4: Get Website URL (after deployment completes)
+---------------------------------------------------
+aws cloudformation describe-stacks --stack-name nfspdominicawssummit-website-stack --query 'Stacks[0].Outputs[?OutputKey==`WebsiteURL`].OutputValue' --output text --region eu-central-1
+
+Step 5: Upload Website Files
+----------------------------
+aws s3 cp index.html s3://nfspdominicawssummit-website/ --region eu-central-1
+aws s3 cp Error.html s3://nfspdominicawssummit-website/ --region eu-central-1
+
+Alternative: Run the script
+--------------------------
+bash deploy-awssummit.sh
+
+Expected Website URL:
+---------------------
+http://nfspdominicawssummit-website.s3-website-eu-central-1.amazonaws.com
