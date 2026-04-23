@@ -165,4 +165,4 @@ The S3 Static Website CloudFormation solution has successfully passed all verifi
 - Full requirements compliance verification
 - Production-ready infrastructure as code solution
 
-The solution is now ready for deployment and will provide a functional static website hosting platform that meets all specified requirements and follows AWS best practices.
+The solution is now ready for deployment and will provide a functional static website hosting platform that meets all specified requirements and follows AWS best practices.r
